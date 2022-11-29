@@ -22,7 +22,7 @@ interface ButtonProps {
   rotate?: boolean,
   underline?: boolean,
   fontFamily?: string,
-  onPress?: (() => void),
+  onPress?: () => void,
 }
 
 export default function BaseButton(props: ButtonProps) {
