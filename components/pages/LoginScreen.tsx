@@ -10,11 +10,12 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-const LoginScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+import * as NavigationBar from 'expo-navigation-bar';
+
+const LoginScreen = ({route, navigation}: NativeStackScreenProps<any, "Login">) => {
 
   function loginPressed(): void {
-    navigation.navigate("Home");
+    navigation.navigate("Main App", {screen: "Home"});
   }
 
   return (

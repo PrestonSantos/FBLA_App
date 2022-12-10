@@ -13,9 +13,12 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import * as NavigationBar from 'expo-navigation-bar';
 
-const HomeScreen = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+const HomeScreen = ({route, navigation}: NativeStackScreenProps<any, "Home">) => {
+  function backPress() {
+    navigation.navigate("Login");
+  }
 
   return (
       <View style={styles.container}>
@@ -23,22 +26,10 @@ const HomeScreen = () => {
           <Image style = {styles.imageStyle} source = {require('../../assets/notredamegreenpondlogo.png')}></Image>
         </View>
 
-        <Text style = {styles.loginText}>Login</Text>
-        <Text style = {styles.smallText}>to your account</Text>
+        <Text style = {styles.loginText}>HOME</Text>
 
         <View style = {{backgroundColor: 'transparent', flex: 1, width: 300, top: 100, justifyContent: 'flex-start', alignSelf: 'center', flexDirection: 'column'}}>
-          <BaseInput backgroundText = 'Username'/>
-          <BaseInput backgroundText = "Password" textVisible = {false}/>
-          <BaseButton title = "Forgot Password?" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300}/>
-          <BaseButton title = "Login" textColor = {mainColors.lightMode.background} backgroundColor={mainColors.lightMode.primary} width={300} height = {60} marginTop = {20} fontSize = {20}/>
-
-          <View style = {{backgroundColor: 'red', height: 3, width: 270, alignSelf: 'center', alignContent: 'flex-start', justifyContent: 'center', flexDirection: 'row', marginTop: 20}}>
-            <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
-            <Text style = {{color: mainColors.lightMode.primary, fontFamily: 'Nunito-Bold', fontSize: 17, alignSelf: 'center', justifyContent: 'flex-start', height: 28, marginLeft: 30, marginRight: 30}}>or</Text>
-            <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
-          </View>
-          <BaseButton title = "Create Account" textColor = {mainColors.lightMode.primary} backgroundColor={"transparent"} width={300} height = {60} fontSize = {20} borderWidth = {4} rotate = {true} marginTop = {20}/>
-          <BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {"Nunito"}/>
+          <BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {"Nunito"} onPress = {backPress}/>
         </View>
 
         <StatusBar style="auto" />

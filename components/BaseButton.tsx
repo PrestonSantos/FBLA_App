@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Animated } from 'react-native';
 
 import colors from "../config/colors";
 
@@ -26,6 +26,27 @@ interface ButtonProps {
 }
 
 export default function BaseButton(props: ButtonProps) {
+  const state = {
+    animatePress: new Animated.Value(1) 
+  }
+
+  function animate()
+  {
+    Animated.timing(state.animatePress, {
+      toValue: 0.9,
+      duration: 200,
+      useNativeDriver: false
+    }).start();
+  }
+
+  function animateOut(){
+    Animated.timing(state.animatePress, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: false
+    }).start();
+  }
+
   const { onPress,
     height = 40,
     width = 120,
@@ -67,7 +88,8 @@ export default function BaseButton(props: ButtonProps) {
       bottom: bottom,
       borderColor: colors.lightMode.primary,
       rotate: rotate,
-      fontWeight: 'normal'
+      fontWeight: 'normal',
+      
     },
     text: {
       fontSize: fontSize,
@@ -82,9 +104,18 @@ export default function BaseButton(props: ButtonProps) {
   });
 
   return (
-   <Pressable style = {styles.button} onPress = {onPress}> 
-    <Text style = {styles.text}>{title}</Text>
-   </Pressable>
+    <Animated.View style = {{
+      backgroundColor: 'transparent',
+      transform: [
+        {
+          scale:state.animatePress
+        }
+      ]
+    }}>
+      <Pressable style = {styles.button} onPress = {onPress} onPressIn = {animate} onPressOut = {animateOut}> 
+        <Text style = {styles.text}>{title}</Text>
+      </Pressable>
+    </Animated.View>
   );
 }
 
