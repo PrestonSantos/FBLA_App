@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
 
 import colors from "../config/colors";
+import fonts from '../config/fonts';
 
 interface InputProps {
   textVisible?: boolean,
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         color: colors.lightMode.primary,
         alignSelf: 'center',
         borderRadius: 14,
-        fontFamily: 'Nunito-SemiBold',
+        fontFamily: fonts.bold,
         flexDirection: 'column',
         justifyContent: 'flex-start',
         fontSize: 18,

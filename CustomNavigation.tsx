@@ -11,10 +11,11 @@ const Tab = createMaterialBottomTabNavigator();
 
 const MainAppNavigator = () => {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator  screenOptions={{tabBarColor: 'white'}}>
             <Tab.Screen 
                 name = "Home"
                 component = {HomeScreen}
+                options = {{tabBarColor: 'white'}}
             />
         </Tab.Navigator>
     )

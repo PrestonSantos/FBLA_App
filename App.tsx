@@ -1,19 +1,26 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 import { MainAppNavigator } from './CustomNavigation';
 
 import mainColors from './config/colors'
 import { NavigationContainer } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useCallback } from 'react';
 import { createStackNavigator, StackHeaderProps } from "@react-navigation/stack";
 import LoginScreen from './components/pages/LoginScreen';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import fonts from './config/fonts';
 
 
+import {
+  useFonts,
+  Nunito_500Medium,
+  Nunito_700Bold,
+  Nunito_600SemiBold
+} from '@expo-google-fonts/nunito'
+import colors from './config/colors';
 
 export type RootStackParams = {
  Login: any;
@@ -27,7 +34,15 @@ const Stack = createStackNavigator();
 
 function customHeader({navigation, route, options, back}: StackHeaderProps) : React.ReactNode {
   return (
-    <View></View>
+    <View style = {styles.header}>
+      <View style = {{backgroundColor: 'transparent', width: '100%', position: 'absolute'}}>
+        <Text style = {styles.titleStyle}>Home</Text>
+      </View>
+      <View style = {{backgroundColor: 'transparent', width: '100%', position: 'absolute', flexDirection: 'row-reverse'}}>
+      <Image style = {styles.settingsIcon} source = {require('./assets/settings.png')}/>
+        <Image style = {styles.bellIcon} source = {require('./assets/bell.png')}/>
+      </View>
+    </View>
   )
 }
 
@@ -35,9 +50,9 @@ function customHeader({navigation, route, options, back}: StackHeaderProps) : Re
 export default function App() {
   // Load all custom fonts: 
   const [fontsLoaded] = useFonts({
-    'Nunito': require('./assets/fonts/Nunito/Nunito-Regular.ttf'),
-    'Nunito-SemiBold': require('./assets/fonts/Nunito/Nunito-SemiBold.ttf'),
-    'Nunito-Bold': require('./assets/fonts/Nunito/Nunito-Bold.ttf'),
+    Nunito_500Medium,
+    Nunito_700Bold,
+    Nunito_600SemiBold
   })
 
   const onLayoutRootView = useCallback(async () => {
@@ -66,10 +81,31 @@ export default function App() {
 // Header styles:
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'transparent',
-    color: 'mainColors.lightMode.primary',
+    backgroundColor: 'white',
+    height: 50,
+    alignItems: 'center',
+    flexDirection: 'row',
+    elevation: 20,
   },
-  headerTitle: {
-    color: mainColors.lightMode.primary,
+  titleStyle: {
+    color: colors.background,
+    fontSize: 28,
+    fontFamily: fonts.bold,
+    fontWeight: "normal",
+    justifyContent: 'space-between',
+    alignSelf: 'center',
+    
   },
+  bellIcon: {
+    width: 40,
+    height: 40,
+    marginRight: 10,
+    opacity: 0.35
+  },
+  settingsIcon: {
+    width: 40,
+    height: 40,
+    marginRight: 10,
+    opacity: 0.35
+  }
 })

@@ -14,6 +14,7 @@ import { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import * as NavigationBar from 'expo-navigation-bar';
+import fonts from '../../config/fonts';
 
 const HomeScreen = ({route, navigation}: NativeStackScreenProps<any, "Home">) => {
   function backPress() {
@@ -22,14 +23,9 @@ const HomeScreen = ({route, navigation}: NativeStackScreenProps<any, "Home">) =>
 
   return (
       <View style={styles.container}>
-        <View style = {styles.backgroundView}>
-          <Image style = {styles.imageStyle} source = {require('../../assets/notredamegreenpondlogo.png')}></Image>
-        </View>
-
-        <Text style = {styles.loginText}>HOME</Text>
 
         <View style = {{backgroundColor: 'transparent', flex: 1, width: 300, top: 100, justifyContent: 'flex-start', alignSelf: 'center', flexDirection: 'column'}}>
-          <BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {"Nunito"} onPress = {backPress}/>
+          <BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {fonts.bold} onPress = {backPress}/>
         </View>
 
         <StatusBar style="auto" />
@@ -40,7 +36,7 @@ const HomeScreen = ({route, navigation}: NativeStackScreenProps<any, "Home">) =>
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F1B4F',
+    backgroundColor: '#eeeeee',
     alignItems: 'center',
     flexDirection: 'column',
 
@@ -69,14 +65,14 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: 20,
     fontWeight: "normal",
-    fontFamily: 'Nunito-Bold',
+    fontFamily: fonts.bold,
     color: mainColors.lightMode.primary,
     marginBottom: 5,
   },
   loginText: {
     fontSize: 80,
     fontWeight: "normal",
-    fontFamily: 'Nunito-Bold',
+    fontFamily: fonts.bold,
     color: mainColors.lightMode.primary,
     marginBottom: 0,
     marginTop: 60,

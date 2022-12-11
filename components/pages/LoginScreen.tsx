@@ -11,6 +11,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import * as NavigationBar from 'expo-navigation-bar';
+import fonts from '../../config/fonts';
 
 const LoginScreen = ({route, navigation}: NativeStackScreenProps<any, "Login">) => {
 
@@ -35,7 +36,7 @@ const LoginScreen = ({route, navigation}: NativeStackScreenProps<any, "Login">) 
 
           <View style = {{backgroundColor: 'transparent', height: 3, width: 270, alignSelf: 'center', alignContent: 'flex-start', justifyContent: 'center', flexDirection: 'row', marginTop: 20}}>
             <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
-            <Text style = {{color: mainColors.lightMode.primary, fontFamily: 'Nunito-Bold', fontSize: 17, alignSelf: 'center', justifyContent: 'flex-start', height: 28, marginLeft: 30, marginRight: 30}}>or</Text>
+            <Text style = {{color: mainColors.lightMode.primary, fontFamily: fonts.bold, fontSize: 17, alignSelf: 'center', justifyContent: 'flex-start', height: 28, marginLeft: 30, marginRight: 30}}>or</Text>
             <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
           </View>
           <BaseButton title = "Create Account" textColor = {mainColors.lightMode.primary} backgroundColor={"transparent"} width={300} height = {60} fontSize = {20} borderWidth = {4} rotate = {true} marginTop = {20}/>
@@ -79,14 +80,14 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: 20,
     fontWeight: "normal",
-    fontFamily: 'Nunito-Bold',
+    fontFamily: fonts.bold,
     color: mainColors.lightMode.primary,
     marginBottom: 5,
   },
   loginText: {
     fontSize: 80,
     fontWeight: "normal",
-    fontFamily: 'Nunito-Bold',
+    fontFamily: fonts.bold,
     color: mainColors.lightMode.primary,
     marginBottom: 0,
     marginTop: 60,

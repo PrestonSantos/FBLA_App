@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Pressable, Animated } from 'react-native';
 
 import colors from "../config/colors";
+import fonts from "../config/fonts";
 
 interface ButtonProps {
   title: string,
@@ -65,7 +66,7 @@ export default function BaseButton(props: ButtonProps) {
     borderWidth = 0,
     rotate = false,
     underline = false,
-    fontFamily = "Nunito-Bold",
+    fontFamily = fonts.bold,
   } = props;
 
   const styles = StyleSheet.create({
