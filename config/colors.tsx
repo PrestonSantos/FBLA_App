@@ -8,5 +8,5 @@ export default {
     },
     primary: "#fcc71c",
     secondary: "gainsboro",
-    background: "##0F1B4F",
+    background: "##0f1b4f",
 }

@@ -13,6 +13,11 @@ import LoginScreen from './components/pages/LoginScreen';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import fonts from './config/fonts';
 
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+
+import { Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from "@expo/vector-icons"
 
 import {
   useFonts,
@@ -32,15 +37,23 @@ export type TabStackParams = {
 
 const Stack = createStackNavigator();
 
+let lastHeader = "";
+
 function customHeader({navigation, route, options, back}: StackHeaderProps) : React.ReactNode {
+  let headerTitle = getFocusedRouteNameFromRoute(route);
+  
+  if (headerTitle == "Groups" || headerTitle == "Photos" || headerTitle == "Home" || headerTitle == "Events" ){
+    lastHeader = headerTitle;
+  }
+
   return (
     <View style = {styles.header}>
       <View style = {{backgroundColor: 'transparent', width: '100%', position: 'absolute'}}>
-        <Text style = {styles.titleStyle}>Home</Text>
+        <Text style = {styles.titleStyle}>{lastHeader}</Text>
       </View>
-      <View style = {{backgroundColor: 'transparent', width: '100%', position: 'absolute', flexDirection: 'row-reverse'}}>
-      <Image style = {styles.settingsIcon} source = {require('./assets/settings.png')}/>
-        <Image style = {styles.bellIcon} source = {require('./assets/bell.png')}/>
+      <View style = {{backgroundColor: 'transparent', width: '100%', position: 'absolute', flexDirection: 'row-reverse', alignContent: 'center'}}>
+        <MaterialIcons style = {styles.settingsIcon} size = {35} name = {"settings"}/>
+
       </View>
     </View>
   )
@@ -70,7 +83,10 @@ export default function App() {
   // Setup app & pages:
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login' screenOptions={{ header: customHeader, headerShown: true}}>
+      <Stack.Navigator initialRouteName='Login' screenOptions = {({route}) => ({ 
+        header: customHeader, 
+        headerShown: true
+      })}>
         <Stack.Screen name = "Login" component = {LoginScreen} options = {{headerShown: false}} />
         <Stack.Screen name = "Main App" component = {MainAppNavigator}/>
       </Stack.Navigator>
@@ -82,13 +98,14 @@ export default function App() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: 'white',
-    height: 50,
+    height: 65,
     alignItems: 'center',
     flexDirection: 'row',
-    elevation: 20,
+    elevation: 10,
+    
   },
   titleStyle: {
-    color: colors.background,
+    color: 'black',
     fontSize: 28,
     fontFamily: fonts.bold,
     fontWeight: "normal",
@@ -97,15 +114,18 @@ const styles = StyleSheet.create({
     
   },
   bellIcon: {
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
     marginRight: 10,
-    opacity: 0.35
+    color: "rgba(0,0,0,0.45)",
+    alignSelf: 'center',
+    justifyContent: 'center'
   },
   settingsIcon: {
-    width: 40,
-    height: 40,
-    marginRight: 10,
-    opacity: 0.35
+    width: 35,
+    height: 35,
+    marginRight: 15,
+    color: "rgba(0,0,0,0.45)",
+    alignSelf: 'center'
   }
 })
