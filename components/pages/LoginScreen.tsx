@@ -34,7 +34,7 @@ const LoginScreen = ({route, navigation}: NativeStackScreenProps<any, "Login">) 
           <BaseButton title = "Don't have an account?" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300}/>
           <BaseButton title = "Login" textColor = {mainColors.lightMode.background} backgroundColor={mainColors.lightMode.primary} width={300} height = {60} marginTop = {20} fontSize = {20} onPress = {loginPressed}/>
 
-          
+          <BaseButton marginTop = {10} underline = {true} title = "Terms & Service" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300}/>
         </View>
 
         <StatusBar style="auto" />

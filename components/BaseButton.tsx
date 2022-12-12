@@ -23,6 +23,7 @@ interface ButtonProps {
   rotate?: boolean,
   underline?: boolean,
   fontFamily?: string,
+  alignSelf?: 'center' | 'flex-start' | 'flex-end',
   onPress?: () => void,
 }
 
@@ -67,12 +68,13 @@ export default function BaseButton(props: ButtonProps) {
     rotate = false,
     underline = false,
     fontFamily = fonts.bold,
+    alignSelf = 'center'
   } = props;
 
   const styles = StyleSheet.create({
     button: {
       alignItems: 'center',
-      alignSelf: 'center',
+      alignSelf: alignSelf,
       justifyContent: 'center',
       borderRadius: 4,
       borderWidth: borderWidth,

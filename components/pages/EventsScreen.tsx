@@ -148,7 +148,7 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(14)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(14, "- 40 Hours Retreat \n- Wrestling Match vs. Northern Lehigh")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 14 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>14</Text>
                 </Pressable>
@@ -166,7 +166,7 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(17)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(17, "- Wrestling Tournament: Beast of the East")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 17 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>17</Text>
                 </Pressable>
@@ -175,7 +175,7 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
             {/* ROW 4:*/}
             <View style = {{backgroundColor: 'transparent', width: '100%', height: '16%', flexDirection: 'row'}}>
             <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(18)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(18, "- Wrestling Tournament: Beast of the East")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 18 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>18</Text>
                 </Pressable>
@@ -199,19 +199,19 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(22, "Half day / early dismissal")}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(22, "- Half day")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 22 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>22</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(23, "Christmas break, no school")}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(23, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 23 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>23</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(24, "Christmas Eve, \nNo school")}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(24, "- Christmas Eve \n- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 24 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>24</Text>
                 </Pressable>
@@ -220,43 +220,43 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
             {/* ROW 5:*/}
             <View style = {{backgroundColor: 'transparent', width: '100%', height: '16%', flexDirection: 'row'}}>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(25, "Christmas, \nNo school")}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(25, "- Christmas \n- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 25 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>25</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(26)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(26, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 26 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>26</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(27)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(27, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 27 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>27</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(28)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(28, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 28 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>28</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(29)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(29, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 29 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>29</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'transparent', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(30)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(30, "- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 30 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>30</Text>
                 </Pressable>
               </View>
               <View style = {{flex: 1, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.1)', height: '100%', justifyContent: 'center'}}>
-                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(31)}>
+                <Pressable style = {{height: '100%', width: '100%', position: 'absolute', justifyContent: 'center'}} onPress = {() => buttonClicked(31, "- New Year's Eve \n- No school")}>
                   <View style = {{position: "absolute", width: 50, height: 50, backgroundColor: 'transparent', borderColor: data.day == 31 ? "yellow" : "transparent", borderWidth: 3, borderRadius: 150, alignSelf: 'center'}}></View>
                   <Text style = {{color: 'white', alignSelf: 'center', fontSize: 17, fontFamily: fonts.bold}}>31</Text>
                 </Pressable>
@@ -265,8 +265,8 @@ const EventsScreen = ({route, navigation}: NativeStackScreenProps<any, "Events">
           </View>
 
         </View>
-        <View style = {{width: "100%", height: "70%", backgroundColor: "#f7c10f", flexDirection: 'column'}}>
-          <Text style = {{fontSize: 40, alignSelf: 'center'}}>{data.event}</Text>
+        <View style = {{width: "100%", height: "30%", backgroundColor: "#081454", flexDirection: 'column'}}>
+          <Text style = {{height: "100%", fontSize: 40, alignSelf: 'center', fontFamily: fonts.bold, color: 'white', textAlign: 'center', textAlignVertical: 'center'}}>{data.event}</Text>
         </View>
 
 

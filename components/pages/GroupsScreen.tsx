@@ -28,8 +28,14 @@ const GroupsScreen = ({route, navigation}: NativeStackScreenProps<any, "Groups">
           <View style = {{height: 500, alignSelf: 'center', width: '90%', flexDirection: 'column', marginTop: 10, borderRadius: 30, backgroundColor: "#081454"}}>
             <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 40, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Future Business Leaders of America</Text>
             <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >FBLA inspires and prepares students to become community-minded business leaders in a global society through relevant career preparation and leadership experiences.</Text>
-            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 30, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Announcements</Text>
+            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 30, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Posts</Text>
             <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >•Testing and presentations must be submitted by Wednesday the 14th. See Dr. Gentile to schedule a time.</Text>
+          </View>
+          <View style = {{height: 500, alignSelf: 'center', width: '90%', flexDirection: 'column', marginTop: 10, borderRadius: 30, backgroundColor: "#081454"}}>
+            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 40, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Technology Club</Text>
+            <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >Tech Club is a STEM-focused group working to inspire students and provide new, engaging opportunities to the school.</Text>
+            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 30, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Posts</Text>
+            <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >•Tech club will have its first meeting on Thursday, December 15.</Text>
           </View>
         </ScrollView>
 
