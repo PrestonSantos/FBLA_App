@@ -29,18 +29,12 @@ const LoginScreen = ({route, navigation}: NativeStackScreenProps<any, "Login">) 
         <Text style = {styles.smallText}>to your account</Text>
 
         <View style = {{backgroundColor: 'transparent', flex: 1, width: 300, top: 100, justifyContent: 'flex-start', alignSelf: 'center', flexDirection: 'column'}}>
-          <BaseInput backgroundText = 'Username'/>
+          <BaseInput backgroundText = 'Email'/>
           <BaseInput backgroundText = "Password" textVisible = {false}/>
-          <BaseButton title = "Forgot Password?" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300}/>
+          <BaseButton title = "Don't have an account?" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300}/>
           <BaseButton title = "Login" textColor = {mainColors.lightMode.background} backgroundColor={mainColors.lightMode.primary} width={300} height = {60} marginTop = {20} fontSize = {20} onPress = {loginPressed}/>
 
-          <View style = {{backgroundColor: 'transparent', height: 3, width: 270, alignSelf: 'center', alignContent: 'flex-start', justifyContent: 'center', flexDirection: 'row', marginTop: 20}}>
-            <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
-            <Text style = {{color: mainColors.lightMode.primary, fontFamily: fonts.bold, fontSize: 17, alignSelf: 'center', justifyContent: 'flex-start', height: 28, marginLeft: 30, marginRight: 30}}>or</Text>
-            <View style = {{backgroundColor: mainColors.lightMode.primary, height: 3, width: '35%', alignSelf: 'flex-start'}}></View>
-          </View>
-          <BaseButton title = "Create Account" textColor = {mainColors.lightMode.primary} backgroundColor={"transparent"} width={300} height = {60} fontSize = {20} borderWidth = {4} rotate = {true} marginTop = {20}/>
-          {/*<BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {"Nunito"}/>*/}
+          
         </View>
 
         <StatusBar style="auto" />

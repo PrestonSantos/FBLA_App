@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Image, View, Text, ImageBackground } from 'react-native';
+import { StyleSheet, Image, View, Text, ImageBackground, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -24,10 +24,14 @@ const GroupsScreen = ({route, navigation}: NativeStackScreenProps<any, "Groups">
   return (
       <View style={styles.container}>
 
-        <View style = {{backgroundColor: 'transparent', flex: 1, width: 300, top: 100, justifyContent: 'flex-start', alignSelf: 'center', flexDirection: 'column'}}>
-          <BaseButton title = "Back" textColor = {mainColors.lightMode.primary} backgroundColor='transparent' width={300} marginTop = {30} underline = {true} fontFamily = {fonts.bold} onPress = {backPress}/>
-          <Text>Groups</Text>
-        </View>
+        <ScrollView style = {{width: "100%", flexDirection: 'column', backgroundColor: 'transparent', alignContent: 'center'}}>
+          <View style = {{height: 500, alignSelf: 'center', width: '90%', flexDirection: 'column', marginTop: 10, borderRadius: 30, backgroundColor: "#081454"}}>
+            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 40, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Future Business Leaders of America</Text>
+            <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >FBLA inspires and prepares students to become community-minded business leaders in a global society through relevant career preparation and leadership experiences.</Text>
+            <Text style = {{marginLeft: 10, textAlign: 'center', marginRight: 10, marginTop: 5, fontSize: 30, fontFamily: fonts.bold, alignSelf: 'center', color: "#f7c10f"}}>Announcements</Text>
+            <Text style = {{fontSize: 20, marginTop: 10, marginLeft: 10, marginRight: 10, color: 'white', textAlign: 'left', alignSelf: 'center'}} >•Testing and presentations must be submitted by Wednesday the 14th. See Dr. Gentile to schedule a time.</Text>
+          </View>
+        </ScrollView>
 
         <StatusBar style="auto" />
       </View>
